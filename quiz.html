@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz · Fact Archive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Fact Archive</a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="facts.html">Quick Facts</a>
+      <a href="texts.html">Primary Texts</a>
+      <a href="trends.html">Trends</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="voices.html">Voices</a>
+      <a href="references.html">References</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <h1>Knowledge Check</h1>
+  <p>Categorized questions from primary sources. Hover underlined terms for definitions. Score updates live and is saved in this browser.</p>
+
+  <div id="name-entry" class="fact-card">
+    <label>Name (saved locally): <input type="text" id="userName" placeholder="Your name"></label>
+    <button onclick="startQuiz()">Start</button>
+  </div>
+
+  <div id="quiz-area" class="hidden">
+    <div id="filters" style="margin-bottom:16px;"></div>
+    <p id="scoreboard" style="font-weight:bold; margin-bottom:12px;">Score: 0 correct / 0 attempted</p>
+    <div id="quiz"></div>
+  </div>
+</main>
+<footer>
+  <p>Al Gregory · thoughtsdefineyou@gmail.com</p>
+</footer>
+<script src="quiz.js"></script>
+</body>
+</html>
