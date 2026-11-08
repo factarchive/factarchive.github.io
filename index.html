@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fact Archive</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Fact Archive</a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="facts.html">Quick Facts</a>
+      <a href="texts.html">Primary Texts</a>
+      <a href="trends.html">Trends</a>
+      <a href="voices.html">Voices</a>
+      <a href="references.html">References</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <h1>Primary sources and documented trends</h1>
+    <p>Short, sourced material on Islamic texts, demographic data, and recorded outcomes. Interactive questions below test specific claims against the cited sources.</p>
+  </section>
+
+  <section class="quiz-section">
+    <h2>Sample questions</h2>
+    <div class="quiz-card" data-answer="true">
+      <p class="question">True or false: The Quran contains verses that prescribe fighting those who do not believe until they pay the jizya or are subdued.</p>
+      <div class="buttons">
+        <button onclick="answer(this, true)">True</button>
+        <button onclick="answer(this, false)">False</button>
+      </div>
+      <div class="explanation hidden">
+        Quran 9:29 (Sahih International): “Fight those who do not believe in Allah or in the Last Day and who do not consider unlawful what Allah and His Messenger have made unlawful and who do not adopt the religion of truth from those who were given the Scripture — [fight] until they give the jizyah willingly while they are humbled.”
+      </div>
+    </div>
+
+    <div class="quiz-card" data-answer="true">
+      <p class="question">True or false: Pew Research surveys in multiple Muslim-majority countries have found substantial percentages favoring sharia as official law.</p>
+      <div class="buttons">
+        <button onclick="answer(this, true)">True</button>
+        <button onclick="answer(this, false)">False</button>
+      </div>
+      <div class="explanation hidden">
+        Pew Research Center, “The World’s Muslims: Religion, Politics and Society” (2013). In several countries majorities or large minorities said they favor making sharia the official law of the land. Exact figures vary by country; see the full report for tables.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Al Gregory · thoughtsdefineyou@gmail.com · Sources listed on the References page</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
