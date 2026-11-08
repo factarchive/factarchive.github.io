@@ -135,15 +135,29 @@ function showQuestion() {
 
 function choose(i) {
   const q = filtered[current];
-  attempted++;
   const correct = i === q.a;
-  if (correct) score++;
   const exp = document.querySelector(".explanation");
-  exp.innerHTML = (correct ? "Correct. " : "Incorrect. ") + q.exp;
-  exp.classList.remove("hidden");
-  updateScore();
-  document.querySelectorAll("#quiz button").forEach(b => b.disabled = true);
-  setTimeout(() => { current++; showQuestion(); }, 1800);
+  const buttons = document.querySelectorAll("#quiz button");
+
+  if (correct) {
+    score++;
+    attempted++;
+    exp.innerHTML = "Correct. " + q.exp;
+    exp.classList.remove("hidden");
+    buttons.forEach(b => b.disabled = true);
+    // Add Next button
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Next";
+    nextBtn.onclick = () => { current++; showQuestion(); };
+    nextBtn.style.marginTop = "12px";
+    document.querySelector(".fact-card").appendChild(nextBtn);
+    updateScore();
+  } else {
+    exp.innerHTML = "Incorrect. Try again.";
+    exp.classList.remove("hidden");
+    // Optionally disable only the wrong button
+    buttons[i].disabled = true;
+  }
 }
 
 function updateScore() {
