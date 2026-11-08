@@ -138,25 +138,32 @@ function choose(i) {
   const correct = i === q.a;
   const exp = document.querySelector(".explanation");
   const buttons = document.querySelectorAll("#quiz button");
+  const clicked = buttons[i];
 
   if (correct) {
     score++;
     attempted++;
     exp.innerHTML = "Correct. " + q.exp;
     exp.classList.remove("hidden");
+    exp.style.color = "#00ba7c";
     buttons.forEach(b => b.disabled = true);
-    // Add Next button
+    clicked.style.background = "#00ba7c";
     const nextBtn = document.createElement("button");
     nextBtn.textContent = "Next";
+    nextBtn.className = "next-btn";
     nextBtn.onclick = () => { current++; showQuestion(); };
-    nextBtn.style.marginTop = "12px";
     document.querySelector(".fact-card").appendChild(nextBtn);
     updateScore();
   } else {
     exp.innerHTML = "Incorrect. Try again.";
     exp.classList.remove("hidden");
-    // Optionally disable only the wrong button
-    buttons[i].disabled = true;
+    exp.style.color = "#f4212e";
+    clicked.style.background = "#f4212e";
+    clicked.disabled = true;
+    setTimeout(() => {
+      exp.classList.add("hidden");
+      clicked.style.background = "";
+    }, 1200);
   }
 }
 
